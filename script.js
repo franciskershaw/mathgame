@@ -46,6 +46,14 @@ function runGame(gameType) {
     } else if(gameType === "subtract") {
         displaySubtractQuestion(num1, num2);
     } else {
+        num1 = Math.floor(Math.random() * 100) + 1;
+        num2 = Math.floor(Math.random() * 100) + 1;
+        console.log(`Before while loop: ${num1}, ${num2}`)
+        while (num1 % num2 !== 0 || num1 === num2 || num2 === 1) {
+            num1 = Math.floor(Math.random() * 100) + 1;
+            num2 = Math.floor(Math.random() * 100) + 1;
+        }
+        console.log(`After while loop: ${num1}, ${num2}`)
         displayDivideQuestion(num1, num2);
     }
 
